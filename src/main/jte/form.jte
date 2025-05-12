@@ -1,6 +1,5 @@
 @import com.github.atomfrede.jdconf_sample.FormModel
 @import org.springframework.validation.BindingResult
-@import java.util.Optional
 
 @param FormModel formModel
 @param BindingResult validationResult
@@ -18,5 +17,6 @@
     <button
             type="submit"
             value="Submit"
-    />
+    >Submit
+    </button>
 </form>
