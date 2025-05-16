@@ -1,0 +1,13 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer span{
+    width: 33%;
+    text-align: center;
+    padding-bottom: 5px;
+}
