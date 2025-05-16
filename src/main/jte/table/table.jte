@@ -1,5 +1,5 @@
-@import com.github.atomfrede.jdconf_sample.person.Person
-@import com.github.atomfrede.jdconf_sample.pagination.PagerModel
+@import com.github.atomfrede.spring_io_25_samples.person.Person
+@import com.github.atomfrede.spring_io_25_samples.pagination.PagerModel
 @import org.springframework.data.domain.Page
 @import gg.jte.support.ForSupport
 @import java.util.Locale

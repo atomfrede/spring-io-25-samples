@@ -1,9 +1,8 @@
-package com.github.atomfrede.jdconf_sample.person;
+package com.github.atomfrede.spring_io_25_samples.person;
 
 import net.datafaker.Faker;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-@param com.github.atomfrede.jdconf_sample.RealtimeService.FeedItem feedItem
+@param com.github.atomfrede.spring_io_25_samples.RealtimeService.FeedItem feedItem
 <li id="news-feed" hx-swap-oob="afterbegin">
     <article>
         <header>${feedItem.author}</header>

@@ -1,4 +1,4 @@
-# JDConf 2025
+# Spring I/O 2025
 
 ## Resources
 

@@ -1,4 +1,4 @@
-package com.github.atomfrede.jdconf_sample;
+package com.github.atomfrede.spring_io_25_samples;
 
 import gg.jte.TemplateEngine;
 import gg.jte.TemplateOutput;

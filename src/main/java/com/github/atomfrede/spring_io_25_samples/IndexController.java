@@ -1,4 +1,4 @@
-package com.github.atomfrede.jdconf_sample;
+package com.github.atomfrede.spring_io_25_samples;
 
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HxRequest;
 import jakarta.validation.Valid;

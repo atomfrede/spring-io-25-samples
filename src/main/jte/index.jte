@@ -1,4 +1,4 @@
-@import com.github.atomfrede.jdconf_sample.FormModel
+@import com.github.atomfrede.spring_io_25_samples.FormModel
 @import org.springframework.validation.BindingResult
 
 @param FormModel formModel

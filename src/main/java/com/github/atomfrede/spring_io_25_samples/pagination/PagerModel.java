@@ -1,4 +1,4 @@
-package com.github.atomfrede.jdconf_sample.pagination;
+package com.github.atomfrede.spring_io_25_samples.pagination;
 
 import org.springframework.data.domain.Page;
 

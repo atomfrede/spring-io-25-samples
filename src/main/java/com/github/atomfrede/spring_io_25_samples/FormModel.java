@@ -1,4 +1,4 @@
-package com.github.atomfrede.jdconf_sample;
+package com.github.atomfrede.spring_io_25_samples;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

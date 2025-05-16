@@ -1,4 +1,4 @@
-package com.github.atomfrede.jdconf_sample;
+package com.github.atomfrede.spring_io_25_samples;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

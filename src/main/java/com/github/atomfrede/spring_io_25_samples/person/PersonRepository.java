@@ -1,6 +1,5 @@
-package com.github.atomfrede.jdconf_sample.person;
+package com.github.atomfrede.spring_io_25_samples.person;
 
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.PagingAndSortingRepository;
 

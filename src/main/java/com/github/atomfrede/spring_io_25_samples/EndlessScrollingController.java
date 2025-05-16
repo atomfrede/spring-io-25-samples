@@ -1,7 +1,7 @@
-package com.github.atomfrede.jdconf_sample;
+package com.github.atomfrede.spring_io_25_samples;
 
-import com.github.atomfrede.jdconf_sample.person.Person;
-import com.github.atomfrede.jdconf_sample.person.PersonService;
+import com.github.atomfrede.spring_io_25_samples.person.Person;
+import com.github.atomfrede.spring_io_25_samples.person.PersonService;
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HxRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
