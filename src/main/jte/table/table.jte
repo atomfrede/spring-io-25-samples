@@ -11,9 +11,19 @@
     <thead>
     <tr>
         <th scope="col">
-            <div>
-                Name
+            @if (persons.getSort().getOrderFor("name") != null && persons.getSort().getOrderFor("name").isDescending())
+            <div
+                    hx-get="/tables?sort=name,asc&size=${persons.getPageable().getPageSize()}&page=${persons.getPageable().getPageNumber()}">
+                Name (V)
             </div>
+            @endif
+            @if (persons.getSort().getOrderFor("name") != null && persons.getSort().getOrderFor("name").isAscending())
+                <div
+                        hx-get="/tables?sort=name,desc&size=${persons.getPageable().getPageSize()}&page=${persons.getPageable().getPageNumber()}"
+                >
+                    Name (^)
+                </div>
+            @endif
         </th>
         <th scope="col">Quote</th>
     </tr>

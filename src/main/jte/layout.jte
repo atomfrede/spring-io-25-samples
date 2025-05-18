@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/htmx-ext-ws@2.0.2" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/idiomorph@0.7.3" integrity="sha384-JcorokHTL/m+D6ZHe2+yFVQopVwZ+91GxAPDyEZ6/A/OEPGEx1+MeNSe2OGvoRS9" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/idiomorph@0.7.3/dist/idiomorph-ext.min.js" integrity="sha384-szktAZju9fwY15dZ6D2FKFN4eZoltuXiHStNDJWK9+FARrxJtquql828JzikODob" crossorigin="anonymous"></script>
-    <title>JDConf 2025 Samples</title>
+    <title>Spring I/O 2025 Samples</title>
 </head>
 
 <body hx-ext="morph">

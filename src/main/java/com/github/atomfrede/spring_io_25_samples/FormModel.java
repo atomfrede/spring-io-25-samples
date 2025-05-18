@@ -10,7 +10,7 @@ public class FormModel {
     @NotBlank(message = "Last name is mandatory")
     public String lastName;
     @NotBlank(message = "Talk is mandatory")
-    @Size(min = 3, max = 120)
+    @Size(min = 10, max = 120)
     public String talk;
 
     public String getFirstName() {
