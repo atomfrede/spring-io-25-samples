@@ -13,7 +13,7 @@
             autocomplete="off"
             aria-invalid="${invalid}"
             aria-describedby="invalid-helper-${name}"
-            hx-trigger="keyup changed delay:200ms"
+            hx-trigger="keyup changed delay:250ms"
             hx-post="/"
             hx-include="closest form"
             hx-target="#hx-form"

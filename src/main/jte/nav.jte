@@ -14,5 +14,6 @@
         <li><a href="/endless-scrolling?sort=name,desc">Endless Scrolling</a></li>
         <li><a href="/tables?sort=name,desc">Tables</a></li>
         <li><a href="/websockets">Websockets</a></li>
+        <li><a href="modal-dialogs">Modal Dialogs</a></li>
     </ul>
 </nav>
