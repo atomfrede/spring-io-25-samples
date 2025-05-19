@@ -2,7 +2,6 @@ package com.github.atomfrede.spring_io_25_samples.modals;
 
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HtmxRedirectView;
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HtmxResponse;
-import io.github.wimdeblauwe.htmx.spring.boot.mvc.HxRedirect;
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HxRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,12 +25,18 @@ public class ModalDialogController {
         return "modal-dialogs/modal";
     }
 
+    @GetMapping("/client-side-event")
+    @HxRequest
+    public String clientSideEvent(){
+        return "modal-dialogs/client-side-event";
+    }
+
     @GetMapping("/confirm")
     @HxRequest
     public HtmxRedirectView confirmModal(Model model, HtmxResponse htmxResponse, RedirectAttributes redirectAttributes){
 
         redirectAttributes.addFlashAttribute("modalConfirmed", "Modal confirmed! \uD83C\uDF89");
-        htmxResponse.addTrigger("modal-confirmed");
+        htmxResponse.addTriggerAfterSwap("modal-confirmed");
         return new HtmxRedirectView("/modal-dialogs");
     }
 

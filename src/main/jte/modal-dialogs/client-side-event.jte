@@ -1,0 +1,1 @@
+<article>Modal confirmed, I was created via client side event!</article>

@@ -2,7 +2,7 @@
 @param String modalConfirmed
 
 @template.layout(content = @`
-    <div>
+    <div hx-trigger="modalConfirmed from:body" hx-get="/modal-dialogs/client-side-event" hx-target="#client-side-event">
         <button
                 hx-get="/modal-dialogs"
                 hx-target="#modals-here"
@@ -13,6 +13,7 @@
 
 
         <div id="alert">${modalConfirmed}</div>
+        <div id="client-side-event"></div>
     </div>
 `,
 footer = @`
