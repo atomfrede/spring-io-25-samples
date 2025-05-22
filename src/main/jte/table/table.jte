@@ -6,6 +6,7 @@
 
 @param Page<Person> persons
 @param PagerModel pager
+@param String q
 
 <table hx-target="#table-wrapper" hx-push-url="true" class="striped">
     <thead>
@@ -13,13 +14,13 @@
         <th scope="col">
             @if (persons.getSort().getOrderFor("name") != null && persons.getSort().getOrderFor("name").isDescending())
             <div
-                    hx-get="/tables?sort=name,asc&size=${persons.getPageable().getPageSize()}&page=${persons.getPageable().getPageNumber()}">
+                    hx-get="/tables?sort=name,asc&size=${persons.getPageable().getPageSize()}&page=${persons.getPageable().getPageNumber()}&q=${q}">
                 Name (V)
             </div>
             @endif
             @if (persons.getSort().getOrderFor("name") != null && persons.getSort().getOrderFor("name").isAscending())
                 <div
-                        hx-get="/tables?sort=name,desc&size=${persons.getPageable().getPageSize()}&page=${persons.getPageable().getPageNumber()}"
+                        hx-get="/tables?sort=name,desc&size=${persons.getPageable().getPageSize()}&page=${persons.getPageable().getPageNumber()}&q=${q}"
                 >
                     Name (^)
                 </div>
@@ -41,7 +42,7 @@
 <div role="group" hx-target="#table-wrapper" hx-push-url="true">
     @if (persons.hasPrevious())
         <button
-                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()-1}"
+                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()-1}&q=${q}"
         >Prev
         </button>
     @else
@@ -50,14 +51,14 @@
 
     @if (persons.getPageable().getPageNumber() + 1 - pager.getButtonsToShow() >=1)
         <button
-                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()-pager.getButtonsToShow()}"
+                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()-pager.getButtonsToShow()}&q=${q}"
         >...
         </button>
     @endif
 
     @for(int i = pager.getStartPage(); i<=pager.getEndPage(); i++)
         <button
-                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${i}"
+                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${i}&q=${q}"
         >
             ${i}
         </button>
@@ -65,7 +66,7 @@
 
     @if (persons.getPageable().getPageNumber() + 1 + pager.getButtonsToShow() <= persons.getTotalPages())
         <button
-                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()+pager.getButtonsToShow()}"
+                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()+pager.getButtonsToShow()}&q=${q}"
 
         >...
         </button>
@@ -73,7 +74,7 @@
 
     @if (persons.hasNext())
         <button
-                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()+1}"
+                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()+1}$q=${q}"
 
         >Next
         </button>

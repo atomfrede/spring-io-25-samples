@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.stream.IntStream;
 
@@ -24,6 +25,13 @@ public class PersonService {
     }
 
     public Page<Person> findAll(Pageable pageable) {
+        return personRepository.findAll(pageable);
+    }
+
+    public Page<Person> findAll(String q, Pageable pageable) {
+        if (q != null && !StringUtils.isEmpty(q)) {
+            return personRepository.findAllWithQuery(q, pageable);
+        }
         return personRepository.findAll(pageable);
     }
 

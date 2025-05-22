@@ -6,10 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class PersonInMemoryRepository implements PersonRepository {
@@ -24,6 +21,30 @@ public class PersonInMemoryRepository implements PersonRepository {
     @Override
     public Iterable<Person> findAll(Sort sort) {
         return persons.values().stream().sorted(Comparator.comparing(Person::getName)).toList();
+    }
+
+    public Page<Person> findAllWithQuery(String q, Pageable pageable) {
+        long totalCount = persons.values().stream()
+                .filter(it -> it.getName().toLowerCase(Locale.ROOT).contains(q.toLowerCase(Locale.ROOT)) || it.getQuote().toLowerCase(Locale.ROOT).contains(q.toLowerCase(Locale.ROOT)))
+                .count();
+        if (pageable.getSort().getOrderFor("name").isAscending()) {
+            List<Person> items = persons.values().stream()
+                    .filter(it -> it.getName().toLowerCase(Locale.ROOT).contains(q.toLowerCase(Locale.ROOT)) || it.getQuote().toLowerCase(Locale.ROOT).contains(q.toLowerCase(Locale.ROOT)))
+                    .skip(pageable.getOffset())
+                    .limit(pageable.getPageSize())
+                    .sorted(Comparator.comparing(Person::getName).reversed())
+                    .toList();
+            return new PageImpl<>(items, pageable, totalCount);
+        } else {
+            List<Person> items = persons.values().stream()
+                    .filter(it -> it.getName().toLowerCase(Locale.ROOT).contains(q.toLowerCase(Locale.ROOT)) || it.getQuote().toLowerCase(Locale.ROOT).contains(q.toLowerCase(Locale.ROOT)))
+                    .skip(pageable.getOffset())
+                    .limit(pageable.getPageSize())
+                    .sorted(Comparator.comparing(Person::getName))
+                    .toList();
+            return new PageImpl<>(items, pageable, totalCount);
+        }
+
     }
 
     @Override
