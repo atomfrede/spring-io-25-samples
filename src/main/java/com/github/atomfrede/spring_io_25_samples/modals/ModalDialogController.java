@@ -3,6 +3,7 @@ package com.github.atomfrede.spring_io_25_samples.modals;
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HtmxRedirectView;
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HtmxResponse;
 import io.github.wimdeblauwe.htmx.spring.boot.mvc.HxRequest;
+import net.datafaker.Faker;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("modal-dialogs")
 public class ModalDialogController {
 
+    private final Faker faker = new Faker();
+
     @GetMapping
     public String index(Model model){
         return "modal-dialogs/index";
@@ -20,8 +23,8 @@ public class ModalDialogController {
 
     @GetMapping
     @HxRequest
-    public String modalContent(){
-
+    public String modalContent(Model model){
+        model.addAttribute("fact", faker.chuckNorris().fact());
         return "modal-dialogs/modal";
     }
 

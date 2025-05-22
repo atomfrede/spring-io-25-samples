@@ -1,3 +1,5 @@
+@param String fact
+
 <div x-data="{}">
     <dialog id="modal-example" open>
         <article>
@@ -7,11 +9,10 @@
                         rel="prev"
                         @click="closeModal"
                 ></button>
-                <h3>Confirm your action!</h3>
+                <h3>Enjoy this random fact!</h3>
             </header>
             <p>
-                Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue finibus
-                pellentesque. Nullam finibus risus non semper euismod.
+                ${fact}
             </p>
             <footer>
                 <button
