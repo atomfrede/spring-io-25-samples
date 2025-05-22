@@ -74,7 +74,7 @@
 
     @if (persons.hasNext())
         <button
-                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()+1}$q=${q}"
+                hx-get="/tables?size=${persons.getPageable().getPageSize()}&sort=${persons.getPageable().getSort().toString().replace(": ", ",").trim().toLowerCase(Locale.ROOT)}&page=${persons.getPageable().getPageNumber()+1}&q=${q}"
 
         >Next
         </button>
