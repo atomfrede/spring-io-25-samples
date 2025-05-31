@@ -15,4 +15,4 @@
 ## Contact
 
 * [linkedin](https://www.linkedin.com/in/frederikhahne/)
-* [mastodon](@atomfrede@mastodon.social)
+* [mastodon](https://mastodon.social/@atomfrede)
