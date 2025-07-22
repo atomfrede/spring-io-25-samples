@@ -19,5 +19,5 @@
 footer = @`
     <span class="element"><a href="https://mastodon.social/@atomfrede">@atomfrede@mastodon.social</a></span>
     <span class="element"><a href="https://2025.springio.net">#springio25</a></span>
-    <span class="element"><a href="">source</a></span>
+    <span class="element"><a href="https://github.com/atomfrede/spring-io-25-samples">source</a></span>
 `)
